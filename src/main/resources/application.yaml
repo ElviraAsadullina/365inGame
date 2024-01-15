@@ -1,0 +1,24 @@
+spring:
+  docker:
+    compose:
+      lifecycle-management: start_only
+  sql:
+    init:
+      mode: never
+      continue-on-error: false
+      data-locations: classpath:demo_data.sql
+
+  liquibase:
+    change-log: classpath:liquibase/changelog.yaml
+    enabled: true
+    default-schema: ingame365
+
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+security:
+  jwt:
+    secret: cmZnaHRyaHJ0ZWZodHlqdHl0eWplcmdlZ3dEU0ZHQkdFR0hUSFJUSFJUSFRIR2RmZmc=
+    access: 3600000
+    refresh: 259200000
+springdoc:
+  override-with-generic-response: false

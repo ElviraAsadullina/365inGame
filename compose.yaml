@@ -1,0 +1,10 @@
+services:
+  postgres:
+    container_name: ingame365
+    image: 'postgres:16.0'
+    environment:
+      - 'POSTGRES_DB=ingame365'
+      - 'POSTGRES_PASSWORD=password'
+      - 'POSTGRES_USER=sumkin'
+    ports:
+      - '5444:5432'
